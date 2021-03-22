@@ -1,47 +1,51 @@
-function vypocet() {
-    let cislo1;
-    let cislo2;
-    let operator;
-    let vysledek;
+var priklad = "";
 
-    cislo1 = document.getElementById("cislo1").value;
-    cislo2 = document.getElementById("cislo2").value;
-    operator = document.getElementById("operator").value;
-
-    console.log(cislo1);
-    console.log(cislo2);
-    console.log(operator);
-
-    if (operator == 1) {
-        vysledek = parseInt(cislo1) + parseInt(cislo2);
-    }
-    if (operator == 2) {
-        vysledek = parseInt(cislo1) - parseInt(cislo2);
-    }
-    if (operator == 3) {
-        vysledek = parseInt(cislo1) * parseInt(cislo2);
-    }
-    if (operator == 4) {
-        vysledek = parseInt(cislo1) / parseInt(cislo2);
-    }
-
-    document.getElementById("vysledek").value = vysledek;
+function ziskatPriklad(cast) {
+    priklad += cast.innerHTML;
+    document.getElementById("priklad").value = priklad;
 }
 
-function generator() {
-    let text;
-    let pocet;
-    let vysledek2 = "";
+function ziskatVysledek() {
+    priklad = eval(priklad);
+    document.getElementById("priklad").value = priklad;
+}
 
-    text = document.getElementById("text").value;
-    pocet = document.getElementById("pocet").value;
+function vymazat() {
+    priklad = "";
+    document.getElementById("priklad").value = priklad;
+}
 
-    console.log(text);
-    console.log(pocet);
+function naDruhou() {
+    priklad = eval(priklad);
+    priklad = priklad * priklad;
+    document.getElementById("priklad").value = priklad;
+}
 
-    for (let cislo = 0; cislo < parseInt(pocet); cislo++) {
-        vysledek2 += text;
+function jednaDelenoX() {
+    priklad = eval(priklad);
+    priklad = 1 / priklad;
+    document.getElementById("priklad").value = priklad;
+}
+
+function druhaOdmocnina() {
+    priklad = eval(priklad);
+    priklad = Math.sqrt(priklad);
+    document.getElementById("priklad").value = priklad;
+}
+
+function plusMinus() {
+    priklad = eval(priklad);
+    if (priklad > 0) {
+        priklad = priklad - (priklad * 2);
     }
+    else {
+        priklad = priklad - (priklad * 2);
+    }
+    document.getElementById("priklad").value = priklad;
+}
 
-    document.getElementById("vysledek2").value = vysledek2;
+function procento() {
+    priklad = eval(priklad);
+    priklad = priklad / 100;
+    document.getElementById("priklad").value = priklad;
 }

@@ -1,0 +1,15 @@
+#tlacitka {
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px;
+}
+
+#priklad {
+    width: 312px;
+    height: 80px;
+    text-align: right;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
